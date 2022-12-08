@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class SymptomTracker extends Model {
     /**
@@ -10,20 +8,31 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      SymptomTracker.belongsTo(models.Users, { foreignKey: 'userId' })
     }
   }
-  SymptomTracker.init({
-    userId: DataTypes.INTEGER,
-    date: DataTypes.STRING,
-    overallFeeling: DataTypes.INTEGER,
-    hoursOfSleep: DataTypes.INTEGER,
-    painLevel: DataTypes.INTEGER,
-    flare: DataTypes.BOOLEAN,
-    notes: DataTypes.TEXT
-  }, {
-    sequelize,
-    modelName: 'SymptomTracker',
-  });
-  return SymptomTracker;
-};
+  SymptomTracker.init(
+    {
+      userId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'users',
+          key: 'id'
+        }
+      },
+      date: DataTypes.STRING,
+      overallFeeling: DataTypes.INTEGER,
+      hoursOfSleep: DataTypes.INTEGER,
+      painLevel: DataTypes.INTEGER,
+      flare: DataTypes.BOOLEAN,
+      notes: DataTypes.TEXT
+    },
+    {
+      sequelize,
+      modelName: 'SymptomTracker',
+      tableName: 'symptomTracker'
+    }
+  )
+  return SymptomTracker
+}
