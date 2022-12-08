@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class SymptomTracker extends Model {
+  class TopicBoard extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,17 +13,13 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  SymptomTracker.init({
+  TopicBoard.init({
     userId: DataTypes.INTEGER,
-    date: DataTypes.STRING,
-    overallFeeling: DataTypes.INTEGER,
-    hoursOfSleep: DataTypes.INTEGER,
-    painLevel: DataTypes.INTEGER,
-    flare: DataTypes.BOOLEAN,
-    notes: DataTypes.TEXT
+    topic: DataTypes.TEXT,
+    date: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'SymptomTracker',
+    modelName: 'TopicBoard',
   });
-  return SymptomTracker;
+  return TopicBoard;
 };

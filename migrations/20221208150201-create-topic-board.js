@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('symptomTrackers', {
+    await queryInterface.createTable('TopicBoards', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,23 +12,11 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER
       },
+      topic: {
+        type: Sequelize.TEXT
+      },
       date: {
         type: Sequelize.STRING
-      },
-      overallFeeling: {
-        type: Sequelize.INTEGER
-      },
-      pain: {
-        type: Sequelize.INTEGER
-      },
-      hoursOfSleep: {
-        type: Sequelize.INTEGER
-      },
-      flare: {
-        type: Sequelize.BOOLEAN
-      },
-      additionalNotes: {
-        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -41,6 +29,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('symptomTrackers');
+    await queryInterface.dropTable('TopicBoards');
   }
 };
