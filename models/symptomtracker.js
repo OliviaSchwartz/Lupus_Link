@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'SymptomTracker',
-      tableName: 'symptomTracker'
+      tableName: 'symptomtrackers'
     }
   )
   return SymptomTracker

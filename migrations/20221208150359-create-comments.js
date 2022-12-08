@@ -12,7 +12,7 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
-        refences: {
+        references: {
           model: 'users',
           key: 'id'
         }
@@ -20,8 +20,8 @@ module.exports = {
       topicId: {
         type: Sequelize.INTEGER,
         onDelete: 'CASCADE',
-        refences: {
-          model: 'topicBoard',
+        references: {
+          model: 'topicboards',
           key: 'id'
         }
       },

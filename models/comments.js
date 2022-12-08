@@ -2,11 +2,6 @@
 const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Comments extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
       Comments.belongsTo(models.TopicBoard, { foreignKey: 'topicId' })
       Comments.belongsTo(models.Users, { foreignKey: 'userId' })
@@ -26,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         onDelete: 'CASCADE',
         references: {
-          model: 'topicBoard',
+          model: 'topicboards',
           key: 'id'
         }
       },
