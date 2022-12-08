@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Users.hasMany(models.SymptomTrackers, { foreignKey: 'userId' })
-      Users.hasMany(models.TopicBoards, { foreignKey: 'userId' })
+      Users.hasMany(models.SymptomTracker, { foreignKey: 'userId' })
+      Users.hasMany(models.TopicBoard, { foreignKey: 'userId' })
       Users.hasMany(models.Comments, { foreignKey: 'userId' })
     }
   }
