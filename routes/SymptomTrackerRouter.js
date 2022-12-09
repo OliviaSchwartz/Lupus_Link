@@ -2,9 +2,24 @@ const router = require('express').Router()
 const controller = require('../controllers/SymptomTrackerController')
 const middleware = require('../middleware')
 
-router.get('/:userId', controller.GetUsersTrackers)
-router.get('/:userId/:trackerId', controller.GetOneTracker)
-router.delete('/:userId/:trackerId', controller.DeleteTracker)
+router.get(
+  '/:userId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetUsersTrackers
+)
+router.get(
+  '/:userId/:trackerId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.GetOneTracker
+)
+router.delete(
+  '/:userId/:trackerId',
+  middleware.stripToken,
+  middleware.verifyToken,
+  controller.DeleteTracker
+)
 
 router.post(
   '/:userId',
