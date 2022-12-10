@@ -33,6 +33,7 @@ const Register = ({ setUser, toggleAuthenticated }) => {
 
   return (
     <div className="signin col">
+      <h1 className="lupuslink">Lupus Link</h1>
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
