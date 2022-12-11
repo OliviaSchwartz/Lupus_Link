@@ -1,4 +1,11 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import {
+  GetOneTracker,
+  GetTrackersById,
+  CreateTrackers
+} from '../services/TrackerServices'
+import SymptomTrackerCard from '../components/SymptomTrackerCard'
 
 const Trackers = ({
   user,
@@ -8,7 +15,12 @@ const Trackers = ({
   setTrackerExists
 }) => {
   const initialState = {
-    date: ''
+    date: '',
+    overallFeeling: '',
+    hoursOfSleep: '',
+    painLevel: '',
+    flare: '',
+    notes: ''
   }
   let navigate = useNavigate()
   const [formState, setFormState] = useState(initialState)
@@ -21,15 +33,15 @@ const Trackers = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const response = await CreateSchedules({ ...formState, userId: user.id })
+    const response = await CreateTrackers({ ...formState, userId: user.id })
     setLatestTracker(response)
     setFormState(initialState)
     setTrackerExists(true)
   }
 
   useEffect(() => {
-    const handleTracker = async (id) => {
-      const data = await GetSchedulesById(id)
+    const handleTracker = async (userId) => {
+      const data = await GetTrackersById(userId)
       setTracker(data)
     }
     if (user) handleTracker(user.id)
@@ -37,13 +49,10 @@ const Trackers = ({
 
   return user && authenticated ? (
     <div>
-      <div className="schedule-form">
-        <h2>
-          Use this scheduling tool to plan your visit to Of Birds and Beasts
-        </h2>
+      <div className="tracker-form">
         <form className="form" onSubmit={handleSubmit}>
           <label className="label dateField" htmlFor="date">
-            Date of visit:{' '}
+            Date{' '}
           </label>
           <input
             className="input"
@@ -55,21 +64,17 @@ const Trackers = ({
             value={formState.date}
             required
           />
-          <button className="create-schedule-button" type="submit">
-            Create Schedule
+          <button className="create-tracker-button" type="submit">
+            Create Tracker
           </button>
         </form>
-        <div className="exhibit-list">
-          <h2>These are our Exhibits:</h2>
-          <h2> Aquarium, Aviary, Forest, Desert, Reptiles and Frozen Tundra</h2>
-        </div>
       </div>
       <div className="grid col-4">
         <div className="grid col-4">
-          {schedule.map((schedule) => (
-            <ScheduleCard
-              key={schedule.id}
-              date={schedule.date}
+          {tracker.map((tracker) => (
+            <SymptomTrackerCard
+              key={tracker.id}
+              date={tracker.date}
               exhibit_list={schedule.exhibit_list}
               schedule_Id={schedule.id}
               setToggle={setToggle}
