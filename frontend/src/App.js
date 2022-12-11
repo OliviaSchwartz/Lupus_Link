@@ -6,10 +6,13 @@ import Home from './pages/Home'
 import { CheckSession } from './services/AuthServices'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Trackers from './pages/Trackers'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
+  const [tracker, setTracker] = useState([])
+  const [trackerExists, setTrackerExists] = useState(false)
 
   const handleLogOut = () => {
     setUser(null)
@@ -49,6 +52,19 @@ function App() {
               <Login
                 setUser={setUser}
                 toggleAuthenticated={toggleAuthenticated}
+              />
+            }
+          />
+          <Route
+            path="/trackers"
+            element={
+              <Trackers
+                user={user}
+                authenticated={authenticated}
+                tracker={tracker}
+                setTracker={setTracker}
+                trackerExists={trackerExists}
+                setTrackerExists={setTrackerExists}
               />
             }
           />
