@@ -6,7 +6,6 @@ const Home = ({}) => {
     <div className="home-container col">
       <div>
         <h1 className="welcome-message">Lupus Link</h1>
-        <h3>Register or Sign-In</h3>
         <section className="welcome-signin">
           <button onClick={() => navigate('/login')}>
             {' '}
