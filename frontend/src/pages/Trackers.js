@@ -50,7 +50,7 @@ const Trackers = ({
   }, [latestTracker, toggle])
 
   const viewTrackers = (id) => {
-    console.log(tracker.date)
+    console.log(id)
     navigate(`${id}`)
   }
 

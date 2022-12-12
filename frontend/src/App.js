@@ -7,7 +7,7 @@ import { CheckSession } from './services/AuthServices'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Trackers from './pages/Trackers'
-import SymptomTrackerCard from './components/SymptomTrackerCard'
+import TrackerDetails from './pages/TrackerDetails'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -40,6 +40,7 @@ function App() {
         <NavBar
           authenticated={authenticated}
           user={user}
+          id={user.id}
           handleLogOut={handleLogOut}
         />
       </header>
@@ -72,7 +73,7 @@ function App() {
           <Route
             path="/tracker/:userId/:trackerId"
             element={
-              <SymptomTrackerCard
+              <TrackerDetails
                 user={user}
                 authenticated={authenticated}
                 tracker={tracker}
