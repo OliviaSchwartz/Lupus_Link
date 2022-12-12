@@ -2,7 +2,7 @@ import Client from './api'
 
 export const GetTrackersById = async (userId) => {
   try {
-    const res = await Client.get(`/trackers/${userId}`)
+    const res = await Client.get(`/tracker/${userId}`)
     return res.data
   } catch (error) {
     throw error
@@ -11,16 +11,16 @@ export const GetTrackersById = async (userId) => {
 
 export const GetOneTracker = async (userId, trackerId) => {
   try {
-    const res = await Client.get(`/trackers/${userId}/${trackerId}`)
+    const res = await Client.get(`/tracker/${userId}/${trackerId}`)
     return res.data
   } catch (error) {
     throw error
   }
 }
 
-export const CreateTrackers = async (data, userId) => {
+export const CreateTrackers = async (data, id) => {
   try {
-    const res = await Client.post(`/trackers/${userId}`, data)
+    const res = await Client.post(`/tracker/${id}`, data)
     return res.data
   } catch (error) {
     throw error
@@ -29,7 +29,7 @@ export const CreateTrackers = async (data, userId) => {
 
 export const UpdateTrackers = async (userId, trackerId, data) => {
   try {
-    const res = await Client.put(`/schedule/${userId}/${trackerId}`, data)
+    const res = await Client.put(`/tracker/${userId}/${trackerId}`, data)
     return res.data
   } catch (error) {
     throw error
@@ -38,7 +38,7 @@ export const UpdateTrackers = async (userId, trackerId, data) => {
 
 export const DeleteTracker = async (userId, trackerId) => {
   try {
-    const res = await Client.delete(`/schedule/${(userId, trackerId)}`)
+    const res = await Client.delete(`/tracker/${userId}/${trackerId}`)
     return res.data
   } catch (error) {
     throw error

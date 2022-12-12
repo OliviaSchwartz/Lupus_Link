@@ -22,7 +22,7 @@ router.delete(
 )
 
 router.post(
-  '/:userId',
+  '/:id',
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateTracker

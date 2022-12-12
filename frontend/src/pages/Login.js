@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const LogIn = ({ setUser, toggleAuthenticated, user }) => {
   let navigate = useNavigate()
+
   const [formValues, setFormValues] = useState({ email: '', password: '' })
 
   const handleChange = (e) => {
@@ -16,7 +17,7 @@ const LogIn = ({ setUser, toggleAuthenticated, user }) => {
     setFormValues({ email: '', password: '' })
     setUser(payload)
     toggleAuthenticated(true)
-    navigate(`/trackers`)
+    navigate(`/tracker`)
   }
 
   return (
