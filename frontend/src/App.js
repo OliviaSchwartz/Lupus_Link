@@ -1,6 +1,7 @@
 import './App.css'
-import { Route, Routes } from 'react-router'
+import { Route, Routes, useNavigate } from 'react-router'
 import { useState, useEffect } from 'react'
+import { Navigate } from 'react-router'
 import NavBar from './components/NavBar'
 import Home from './pages/Home'
 import { CheckSession } from './services/AuthServices'
@@ -40,7 +41,6 @@ function App() {
         <NavBar
           authenticated={authenticated}
           user={user}
-          id={user.id}
           handleLogOut={handleLogOut}
         />
       </header>
@@ -58,7 +58,7 @@ function App() {
             }
           />
           <Route
-            path="/tracker/:userId"
+            path="/tracker"
             element={
               <Trackers
                 user={user}
@@ -71,7 +71,7 @@ function App() {
             }
           />
           <Route
-            path="/tracker/:userId/:trackerId"
+            path="/tracker/:id"
             element={
               <TrackerDetails
                 user={user}

@@ -7,7 +7,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
     const authenticatedOptions = (
       <nav className= "navbar">
         <Link className="nav" to ='/about'>About</Link>
-        <Link className="nav" to={`/tracker/${user.id}`}>Symptom Tracker</Link>
+        <Link className="nav" to={`/tracker`}>Symptom Tracker</Link>
         <Link className="nav" to='/communityboard'>Community Board</Link>
         <Link className="nav" to='/education'>Education</Link>
         <Link className="nav"to= '/clinicaltrials'>Clinical Trials</Link>

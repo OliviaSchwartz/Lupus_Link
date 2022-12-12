@@ -5,6 +5,7 @@ const { SymptomTracker } = require('../models')
 const GetOneTracker = async (req, res) => {
   try {
     let trackerId = parseInt(req.params.trackerId)
+    let userId = parseInt(req.params.userId)
     let onetracker = await SymptomTracker.findByPk(trackerId)
     console.log(`This is one schedule`, onetracker)
     res.send(onetracker)

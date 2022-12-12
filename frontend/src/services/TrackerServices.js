@@ -9,16 +9,16 @@ export const GetTrackersById = async (userId) => {
   }
 }
 
-export const GetOneTracker = async (trackerId) => {
+export const GetOneTracker = async (id) => {
   try {
-    const res = await Client.get(`/tracker/${trackerId}`)
+    const res = await Client.get(`/tracker/${id}`)
     return res.data
   } catch (error) {
     throw error
   }
 }
 
-export const CreateTrackers = async (data, id) => {
+export const CreateTrackers = async (id, data) => {
   try {
     const res = await Client.post(`/tracker/${id}`, data)
     return res.data

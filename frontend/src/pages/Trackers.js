@@ -149,6 +149,7 @@ const Trackers = ({
               date={tracker.date}
               overallFeeling={tracker.overallFeeling}
               hoursOfSleep={tracker.hoursOfSleep}
+              painLevel={tracker.painLevel}
               trackerId={tracker.id}
               setToggle={setToggle}
               toggle={toggle}
