@@ -4,7 +4,9 @@ const SymptomTrackerCard = (props) => {
     return (
         <div className="tracker-card">
             <h3 className="tracker-date">Date: {props.date} </h3>
-            {/* <button onClick={props.viewOnClick}>View Tracker Details</button> */}
+            <h3 className="tracker-overall">How You're Feeling Overall: {props.overallFeeling}</h3>
+            <button className="exhibit-button" onClick={() => props.onClick(props.id)}> Update Tracker</button>
+
         </div>
     )
 }

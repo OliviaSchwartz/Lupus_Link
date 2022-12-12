@@ -9,7 +9,7 @@ router.get(
   controller.GetUsersTrackers
 )
 router.get(
-  '/:userId/:trackerId',
+  '/:userId',
   middleware.stripToken,
   middleware.verifyToken,
   controller.GetOneTracker
@@ -22,7 +22,7 @@ router.delete(
 )
 
 router.post(
-  '/:id',
+  '/:userId',
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateTracker

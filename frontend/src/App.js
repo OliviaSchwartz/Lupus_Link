@@ -57,7 +57,7 @@ function App() {
             }
           />
           <Route
-            path="/tracker"
+            path="/tracker/:userId"
             element={
               <Trackers
                 user={user}

@@ -6,6 +6,7 @@ import {
   CreateTrackers
 } from '../services/TrackerServices'
 import SymptomTrackerCard from '../components/SymptomTrackerCard'
+import { useParams } from 'react-router-dom'
 
 const Trackers = ({
   user,
@@ -22,6 +23,7 @@ const Trackers = ({
     flare: '',
     notes: ''
   }
+
   let navigate = useNavigate()
   const [formState, setFormState] = useState(initialState)
   const [toggle, setToggle] = useState(false)
@@ -46,6 +48,11 @@ const Trackers = ({
     }
     if (user) handleTracker(user.id)
   }, [latestTracker, toggle])
+
+  const viewTrackers = (id) => {
+    console.log(tracker.date)
+    navigate(`${id}`)
+  }
 
   return user && authenticated ? (
     <div>
@@ -147,6 +154,7 @@ const Trackers = ({
               toggle={toggle}
               setLatestTracker={setLatestTracker}
               latestTracker={latestTracker}
+              onClick={() => viewTrackers(tracker?.id)}
             />
           ))}
         </div>
