@@ -18,7 +18,8 @@ const CommunityBoard = ({
 }) => {
   const initialState = {
     date: '',
-    topic: ''
+    topic: '',
+    name: ''
   }
 
   let navigate = useNavigate()
@@ -36,7 +37,7 @@ const CommunityBoard = ({
     let userId = user.id
     console.log(userId)
     const response = await axios.post(
-      `${BASE_URL}/tracker/${userId}`,
+      `${BASE_URL}/topics/${userId}`,
       formState,
       userId
     )
@@ -51,7 +52,7 @@ const CommunityBoard = ({
       setTopic(data)
     }
     handleTopic()
-  }, [])
+  }, [latestTopic, toggle])
 
   // const viewTrackers = (id) => {
   //   console.log(id)
@@ -88,6 +89,19 @@ const CommunityBoard = ({
             value={formState.topic}
             required
           />
+          <label className="label dateField" htmlFor="name">
+            Your name:{' '}
+          </label>
+          <input
+            className="input"
+            type="text-area"
+            id="name"
+            placeholder="1-5(Required)"
+            cols="30"
+            onChange={handleChange}
+            value={formState.name}
+            required
+          />
           <button className="create-tracker-button" type="submit">
             Post Topic to Community Board
           </button>
@@ -101,7 +115,8 @@ const CommunityBoard = ({
               date={topic.date}
               topic={topic.topic}
               topicId={topic.id}
-              user={topic.userId}
+              name={topic.User.name}
+              userId={topic.userId}
               setToggle={setToggle}
               toggle={toggle}
               setLatestTopic={setLatestTopic}
