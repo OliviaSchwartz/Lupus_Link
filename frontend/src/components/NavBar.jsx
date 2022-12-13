@@ -1,11 +1,11 @@
 import {Link} from 'react-router-dom'
 
 const Nav = ({ authenticated, user, handleLogOut}) => {
-
-
-
-    const authenticatedOptions = (
+  let authenticatedOptions
+  if (user) {
+     authenticatedOptions = (
       <nav className= "navbar">
+        <div className="nav">Hello{user.email}</div>
         <Link className="nav" to ='/about'>About</Link>
         <Link className="nav" to='/tracker'>Symptom Tracker</Link>
         <Link className="nav" to='/topics'>Community Board</Link>
@@ -16,7 +16,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
         </Link>
       </nav>
     )
-
+  }
 
   const publicOptions = (
     <nav className= "navbar">

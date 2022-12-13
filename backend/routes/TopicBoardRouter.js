@@ -10,11 +10,6 @@ router.delete(
   middleware.verifyToken,
   controller.DeleteTopic
 )
-router.post(
-  '/:userId',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.CreateTopic
-)
+router.post('/:userId', controller.CreateTopic)
 
 module.exports = router

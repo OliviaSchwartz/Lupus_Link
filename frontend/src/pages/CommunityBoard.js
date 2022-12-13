@@ -6,16 +6,15 @@ import {
   GetOneTopic
 } from '../services/CommunityBoardServices'
 import TopicCard from '../components/TopicCard'
-import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import { BASE_URL } from '../services/api'
 
-const Topics = ({
+const CommunityBoard = ({
   user,
   authenticated,
-  setTracker,
-  tracker,
-  setTrackerExists,
-  userId
+  setTopic,
+  topic,
+  setTopicExists
 }) => {
   const initialState = {
     date: '',
@@ -23,7 +22,6 @@ const Topics = ({
   }
 
   let navigate = useNavigate()
-  let { id } = useParams()
 
   const [formState, setFormState] = useState(initialState)
   const [toggle, setToggle] = useState(false)
@@ -33,25 +31,27 @@ const Topics = ({
     setFormState({ ...formState, [e.target.id]: e.target.value })
   }
 
-  const handleSubmit = async (e, id) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(id)
+    let userId = user.id
+    console.log(userId)
     const response = await axios.post(
-      `http://localhost:3001/tracker/${id}`,
-      formState
+      `${BASE_URL}/tracker/${userId}`,
+      formState,
+      userId
     )
-    setLatestTracker(response)
+    setLatestTopic(response)
     setFormState(initialState)
-    setTrackerExists(true)
+    setTopicExists(true)
   }
 
   useEffect(() => {
-    const handleTracker = async (userId) => {
-      const data = await GetTrackersById(userId)
-      setTracker(data)
+    const handleTopic = async () => {
+      const data = await GetTopics()
+      setTopic(data)
     }
-    if (user) handleTracker(user.id)
-  }, [latestTracker, toggle])
+    handleTopic()
+  }, [])
 
   // const viewTrackers = (id) => {
   //   console.log(id)
@@ -75,92 +75,37 @@ const Topics = ({
             value={formState.date}
             required
           />
-          <label className="label dateField" htmlFor="overallFeeling">
-            How are you feeling overall?{' '}
+          <label className="label dateField" htmlFor="topic">
+            Topic:{' '}
           </label>
           <input
             className="input"
-            type="text"
-            id="overallFeeling"
+            type="text-area"
+            id="topic"
             placeholder="1-5(Required)"
             cols="30"
             onChange={handleChange}
-            value={formState.overallFeeling}
-            required
-          />
-          <label className="label dateField" htmlFor="hoursOfSleep">
-            How Many Hours of sleep did you get last night?{' '}
-          </label>
-          <input
-            className="input"
-            type="text"
-            id="hoursOfSleep"
-            placeholder="1-10 (Required)"
-            cols="30"
-            onChange={handleChange}
-            value={formState.hoursOfSleep}
-            required
-          />
-          <label className="label dateField" htmlFor="painLevel">
-            How is your pain level today?{' '}
-          </label>
-          <input
-            className="input"
-            type="text"
-            id="painLevel"
-            placeholder="1-4 (Required)"
-            cols="30"
-            onChange={handleChange}
-            value={formState.painLevel}
-            required
-          />
-          <label className="label dateField" htmlFor="flare">
-            Are you having a flare?{' '}
-          </label>
-          <input
-            className="input"
-            type="text"
-            id="flare"
-            placeholder="True or false?"
-            cols="30"
-            onChange={handleChange}
-            value={formState.flare}
-            required
-          />
-          <label className="label dateField" htmlFor="notes">
-            Use this space to write down any notes you may have{' '}
-          </label>
-          <input
-            className="input"
-            type="text"
-            id="notes"
-            placeholder="Notes here"
-            cols="30"
-            onChange={handleChange}
-            value={formState.notes}
+            value={formState.topic}
             required
           />
           <button className="create-tracker-button" type="submit">
-            Create Tracker
+            Post Topic to Community Board
           </button>
         </form>
       </div>
       <div className="grid col-4">
         <div className="grid col-4">
-          {tracker?.map((tracker) => (
-            <SymptomTrackerCard
-              key={tracker.id}
-              date={tracker.date}
-              overallFeeling={tracker.overallFeeling}
-              hoursOfSleep={tracker.hoursOfSleep}
-              painLevel={tracker.painLevel}
-              flare={tracker.flare}
-              notes={tracker.notes}
-              trackerId={tracker.id}
+          {topic?.map((topic) => (
+            <TopicCard
+              key={topic.id}
+              date={topic.date}
+              topic={topic.topic}
+              topicId={topic.id}
+              user={topic.userId}
               setToggle={setToggle}
               toggle={toggle}
-              setLatestTracker={setLatestTracker}
-              latestTracker={latestTracker}
+              setLatestTopic={setLatestTopic}
+              latestTopic={latestTopic}
             />
           ))}
         </div>
@@ -178,5 +123,4 @@ const Topics = ({
     </div>
   )
 }
-
-export default Trackers
+export default CommunityBoard
