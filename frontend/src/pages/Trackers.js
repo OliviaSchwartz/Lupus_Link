@@ -7,13 +7,16 @@ import {
 } from '../services/TrackerServices'
 import SymptomTrackerCard from '../components/SymptomTrackerCard'
 import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import { BASE_URL } from '../services/api'
 
 const Trackers = ({
   user,
   authenticated,
   setTracker,
   tracker,
-  setTrackerExists
+  setTrackerExists,
+  userId
 }) => {
   const initialState = {
     date: '',
@@ -25,6 +28,7 @@ const Trackers = ({
   }
 
   let navigate = useNavigate()
+
   const [formState, setFormState] = useState(initialState)
   const [toggle, setToggle] = useState(false)
   const [latestTracker, setLatestTracker] = useState({})
@@ -35,7 +39,13 @@ const Trackers = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const response = await CreateTrackers({ ...formState, userId: user.id })
+    let userId = user.id
+    console.log(userId)
+    const response = await axios.post(
+      `${BASE_URL}/tracker/${userId}`,
+      formState,
+      userId
+    )
     setLatestTracker(response)
     setFormState(initialState)
     setTrackerExists(true)
@@ -48,11 +58,6 @@ const Trackers = ({
     }
     if (user) handleTracker(user.id)
   }, [latestTracker, toggle])
-
-  const viewTrackers = (id) => {
-    console.log(id)
-    navigate(`${id}`)
-  }
 
   return user && authenticated ? (
     <div>
@@ -150,12 +155,13 @@ const Trackers = ({
               overallFeeling={tracker.overallFeeling}
               hoursOfSleep={tracker.hoursOfSleep}
               painLevel={tracker.painLevel}
+              flare={tracker.flare}
+              notes={tracker.notes}
               trackerId={tracker.id}
               setToggle={setToggle}
               toggle={toggle}
               setLatestTracker={setLatestTracker}
               latestTracker={latestTracker}
-              onClick={() => viewTrackers(tracker?.id)}
             />
           ))}
         </div>

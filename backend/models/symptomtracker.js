@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
       overallFeeling: DataTypes.INTEGER,
       hoursOfSleep: DataTypes.INTEGER,
       painLevel: DataTypes.INTEGER,
-      flare: DataTypes.BOOLEAN,
+      flare: DataTypes.STRING,
       notes: DataTypes.TEXT
     },
     {

@@ -8,7 +8,7 @@ import { CheckSession } from './services/AuthServices'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Trackers from './pages/Trackers'
-import TrackerDetails from './pages/TrackerDetails'
+import SymptomTrackerCard from './components/SymptomTrackerCard'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -71,9 +71,9 @@ function App() {
             }
           />
           <Route
-            path="/tracker/:id"
+            path="/tracker/:trackerId"
             element={
-              <TrackerDetails
+              <SymptomTrackerCard
                 user={user}
                 authenticated={authenticated}
                 tracker={tracker}

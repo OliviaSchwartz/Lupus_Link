@@ -30,7 +30,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       flare: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       },
       notes: {
         type: Sequelize.TEXT
@@ -46,6 +46,6 @@ module.exports = {
     })
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('symptomTrackers')
+    await queryInterface.dropTable('symptomtrackers')
   }
 }

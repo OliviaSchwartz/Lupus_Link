@@ -15,21 +15,16 @@ router.get(
   controller.GetOneTracker
 )
 router.delete(
-  '/:userId/:trackerId',
+  '/:trackerId',
   middleware.stripToken,
   middleware.verifyToken,
   controller.DeleteTracker
 )
 
-router.post(
-  '/:id',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.CreateTracker
-)
+router.post('/:userId', controller.CreateTracker)
 
 router.put(
-  '/:userId/:trackerId',
+  '/:trackerId',
   middleware.stripToken,
   middleware.verifyToken,
   controller.UpdateTracker
