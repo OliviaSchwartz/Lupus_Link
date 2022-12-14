@@ -18,6 +18,7 @@ const TopicDetails = ({
   const [topic, setTopic] = useState({})
   let navigate = useNavigate()
   const initialState = {
+    name: '',
     date: '',
     comment: ''
   }
@@ -78,6 +79,19 @@ const TopicDetails = ({
         <button onClick={deleteTopic}>Delete Topic</button>
       </section>
       <form className="form" onSubmit={handleSubmit}>
+        <label className="label dateField" htmlFor="name">
+          Your name:{' '}
+        </label>
+        <input
+          className="input"
+          type="text"
+          id="name"
+          placeholder="MM/DD/YY (Required)"
+          cols="30"
+          onChange={handleChange}
+          value={formState.name}
+          required
+        />
         <label className="label dateField" htmlFor="date">
           Date{' '}
         </label>
@@ -117,7 +131,7 @@ const TopicDetails = ({
               comment={comment.comment}
               commentId={comment.id}
               userId={comment.userId}
-              //   user={comment.User.name}
+              name={comment.name}
               setToggle={setToggle}
               toggle={toggle}
               setLatestComment={setLatestComment}

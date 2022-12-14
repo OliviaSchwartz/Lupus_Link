@@ -28,6 +28,9 @@ module.exports = {
       comment: {
         type: Sequelize.TEXT
       },
+      name: {
+        type: Sequelize.STRING
+      },
       date: {
         type: Sequelize.STRING
       },

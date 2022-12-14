@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       },
       comment: DataTypes.TEXT,
+      name: DataTypes.STRING,
       date: DataTypes.STRING
     },
     {
