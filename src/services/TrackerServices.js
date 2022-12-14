@@ -21,7 +21,6 @@ export const GetOneTracker = async (id) => {
 export const CreateTrackers = async (id, data) => {
   try {
     const res = await Client.post(`/tracker/${id}`, data)
-    console.log(res)
     return res.data
   } catch (error) {
     throw error

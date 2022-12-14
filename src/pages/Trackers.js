@@ -34,7 +34,6 @@ const Trackers = ({
   const handleSubmit = async (e) => {
     e.preventDefault()
     let userId = user.id
-    console.log(userId)
     const response = await axios.post(
       `${BASE_URL}/tracker/${userId}`,
       formState,
@@ -55,6 +54,7 @@ const Trackers = ({
 
   return user && authenticated ? (
     <div>
+      <h1 className="page-name">Symptom Tracking Log</h1>
       <div className="tracker-form">
         <form className="form" onSubmit={handleSubmit}>
           <label className="label dateField" htmlFor="date">

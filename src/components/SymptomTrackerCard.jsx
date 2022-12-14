@@ -1,7 +1,6 @@
-import Trackers from "../pages/Trackers"
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
-import { DeleteTracker, UpdateTrackers } from "../services/TrackerServices"
+import { DeleteTracker } from "../services/TrackerServices"
 import { BASE_URL } from "../services/api"
 
 
@@ -33,13 +32,11 @@ const initialState = {
     const handleSubmit = async (e) => {
         e.preventDefault()
         let trackerId = props.trackerId
-        console.log(trackerId)
         const response = await axios.put(
           `${BASE_URL}/tracker/${trackerId}`,
           formState,
           trackerId
         )
-        console.log(response)
         props.setLatestTracker(response)
         setFormState(initialState)
         props.setTrackerExists(true)
@@ -47,21 +44,15 @@ const initialState = {
         setShowForm(false)
       }
 
-    const displayUpdateForm = async () => {
-        setShowForm(showForm);
-    }
-
-
-
     return (
         <div className="tracker-card">
             <h2 className="tracker-date">Date: {props.date} </h2>
-            <h3 className="tracker-overall">Overall Feeling: {props.overallFeeling}</h3>
-            <h3 className="tracker-sleep">Hours of Sleep: {props.hoursOfSleep} </h3>
-            <h3 className="pain-level">Pain Level: {props.painLevel}</h3>
-            <h3 className="flare"> Flare?: {props.flare}</h3>
-            <h3 className="notes">Notes: {props.notes}</h3>
-            <button className="schedule-button" onClick={(deleteTracker)}>Delete Tracker</button>
+            <h3 className="tracker-into">Overall Feeling: {props.overallFeeling}</h3>
+            <h3 className="tracker-info">Hours of Sleep: {props.hoursOfSleep} </h3>
+            <h3 className="tracker-info">Pain Level: {props.painLevel}</h3>
+            <h3 className="tracker-info"> Flare?: {props.flare}</h3>
+            <h3 className="tracker-info">Notes: {props.notes}</h3>
+            <button className="tracker-button" onClick={(deleteTracker)}>Delete Tracker</button>
             {showForm ? ( <form onSubmit={handleSubmit}>
             <label className="label dateField" htmlFor="date">
             Date{' '}
@@ -159,11 +150,11 @@ const initialState = {
             value={formState.notes}
             required
           />
-          <button className="create-tracker-button" type="submit">
+          <button className="tracker-button" type="submit">
             Update
           </button>
-          <button className="create-tracker-button" type="submit" onClick={()=>setShowForm(false)}>Cancel</button>
-          </form> ) : ( <button className="schedule-button" onClick={()=>setShowForm(true) }> Update Tracker</button>)}
+          <button className="tracker-button" type="submit" onClick={()=>setShowForm(false)}>Cancel</button>
+          </form> ) : ( <button className="tracker-button" onClick={()=>setShowForm(true) }> Update Tracker</button>)}
         </div>
     )
 }

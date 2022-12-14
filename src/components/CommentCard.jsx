@@ -3,7 +3,6 @@ import { DeleteComment } from "../services/CommentServices"
 const CommentCard = (props) => {
 
     const deleteComment= async (e) => {
-        console.log(props.commentId)
         e.preventDefault()
         await DeleteComment(props.commentId)
         props.setToggle(!props.toggle)

@@ -4,7 +4,7 @@ import { BASE_URL } from '../services/api'
 import { useNavigate, useParams } from 'react-router-dom'
 import { DeleteTopic } from '../services/CommunityBoardServices'
 import CommentCard from '../components/CommentCard'
-import { CreateComment, GetComments } from '../services/CommentServices'
+import { GetComments } from '../services/CommentServices'
 
 const TopicDetails = ({
   user,
@@ -42,13 +42,11 @@ const TopicDetails = ({
   const handleSubmit = async (e) => {
     e.preventDefault()
     let topicId = topic.id
-    console.log(topicId)
     const response = await axios.post(
       `${BASE_URL}/comments/${id}/${id}`,
       formState,
       topicId
     )
-    console.log(response)
     setLatestComment(response)
     setFormState(initialState)
     setCommentExists(true)
@@ -57,7 +55,6 @@ const TopicDetails = ({
   useEffect(() => {
     const getTopic = async () => {
       let response = await axios.get(`${BASE_URL}/topics/${id}`)
-      console.log(response.data)
       setTopic(response.data)
     }
     getTopic()
@@ -66,7 +63,6 @@ const TopicDetails = ({
   const deleteTopic = async (e) => {
     e.preventDefault()
     await DeleteTopic(id)
-    console.log(id)
     navigate(`/topics`)
   }
 

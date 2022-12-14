@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import {
-  GetTopics,
-  CreateTopic,
-  GetOneTopic
-} from '../services/CommunityBoardServices'
+import { GetTopics } from '../services/CommunityBoardServices'
 import TopicCard from '../components/TopicCard'
 import axios from 'axios'
 import { BASE_URL } from '../services/api'
@@ -34,7 +30,6 @@ const CommunityBoard = ({
   const handleSubmit = async (e) => {
     e.preventDefault()
     let userId = user.id
-    console.log(userId)
     const response = await axios.post(
       `${BASE_URL}/topics/${userId}`,
       formState,

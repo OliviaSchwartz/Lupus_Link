@@ -21,7 +21,6 @@ export const GetOneTopic = async (id) => {
 export const CreateTopic = async (userId, data) => {
   try {
     const res = await Client.post(`/topics/${userId}`, data)
-    console.log(res)
     return res.data
   } catch (error) {
     throw error

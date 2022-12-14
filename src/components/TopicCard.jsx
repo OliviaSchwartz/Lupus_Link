@@ -4,7 +4,6 @@ const TopicCard = (props) => {
 let navigate=useNavigate()
 
 const viewTopic = () => {
-console.log(props.topicId)
 navigate(`/topics/${props.topicId}`)
   }
     return (

@@ -21,7 +21,6 @@ export const GetOneComment = async (topicId, id) => {
 export const CreateComment = async (topicId, data) => {
   try {
     const res = await Client.post(`/comments/${topicId}`, data)
-    console.log(res)
     return res.data
   } catch (error) {
     throw error
