@@ -4,7 +4,7 @@ import { BASE_URL } from '../services/api'
 import { useNavigate, useParams } from 'react-router-dom'
 import { DeleteTopic } from '../services/CommunityBoardServices'
 import CommentCard from '../components/CommentCard'
-import { CreateComment } from '../services/CommentServices'
+import { CreateComment, GetComments } from '../services/CommentServices'
 
 const TopicDetails = ({
   user,
@@ -30,16 +30,23 @@ const TopicDetails = ({
     setFormState({ ...formState, [e.target.id]: e.target.value })
   }
 
+  useEffect(() => {
+    const handleComment = async () => {
+      const response = await GetComments(id)
+      setComment(response)
+    }
+    handleComment()
+  }, [latestComment, toggle])
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     let topicId = topic.id
     console.log(topicId)
-    const response = await CreateComment({ ...formState, topicId })
-    // const response = await axios.post(
-    //   `${BASE_URL}/topics/${id}`,
-    //   formState,
-    //   topicId
-    // )
+    const response = await axios.post(
+      `${BASE_URL}/comments/${id}`,
+      formState,
+      topicId
+    )
     console.log(response)
     setLatestComment(response)
     setFormState(initialState)
@@ -109,7 +116,6 @@ const TopicDetails = ({
               date={comment.date}
               comment={comment.comment}
               commentId={comment.id}
-              name={comment.User.name}
               userId={comment.userId}
               setToggle={setToggle}
               toggle={toggle}
