@@ -28,9 +28,9 @@ export const CreateComment = async (topicId, data) => {
   }
 }
 
-export const DeleteComment = async (topicId, id) => {
+export const DeleteComment = async (commentId) => {
   try {
-    const res = await Client.delete(`/comments/${topicId}/${id}`)
+    const res = await Client.delete(`/comments/${commentId}`)
     return res.data
   } catch (error) {
     throw error

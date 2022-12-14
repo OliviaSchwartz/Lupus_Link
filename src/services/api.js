@@ -1,6 +1,7 @@
 import Axios from 'axios'
 
-export const BASE_URL = 'https://lupus-link-server.herokuapp.com'
+export const BASE_URL = 'http://localhost:3001'
+// 'https://lupus-link-server.herokuapp.com'
 
 const Client = Axios.create({ baseURL: BASE_URL })
 
