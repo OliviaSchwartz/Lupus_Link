@@ -139,7 +139,7 @@ const Trackers = ({
             type="text"
             id="notes"
             placeholder="Notes here"
-            cols="30"
+            cols="50"
             onChange={handleChange}
             value={formState.notes}
             required

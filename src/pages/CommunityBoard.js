@@ -77,8 +77,8 @@ const CommunityBoard = ({
             className="input"
             type="text-area"
             id="topic"
-            placeholder="1-5(Required)"
-            cols="30"
+            placeholder="Start a discussion topic here..."
+            cols="60"
             onChange={handleChange}
             value={formState.topic}
             required

@@ -78,50 +78,6 @@ const TopicDetails = ({
       <section>
         <button onClick={deleteTopic}>Delete Topic</button>
       </section>
-      <form className="form" onSubmit={handleSubmit}>
-        <label className="label dateField" htmlFor="name">
-          Your name:{' '}
-        </label>
-        <input
-          className="input"
-          type="text"
-          id="name"
-          placeholder="MM/DD/YY (Required)"
-          cols="30"
-          onChange={handleChange}
-          value={formState.name}
-          required
-        />
-        <label className="label dateField" htmlFor="date">
-          Date{' '}
-        </label>
-        <input
-          className="input"
-          type="text"
-          id="date"
-          placeholder="MM/DD/YY (Required)"
-          cols="30"
-          onChange={handleChange}
-          value={formState.date}
-          required
-        />
-        <label className="label dateField" htmlFor="comment">
-          Comment:{' '}
-        </label>
-        <textarea
-          className="input"
-          type="text"
-          id="comment"
-          placeholder="comment"
-          cols="30"
-          onChange={handleChange}
-          value={formState.comment}
-          required
-        />
-        <button className="create-tracker-button" type="submit">
-          Add Comment
-        </button>
-      </form>
       <div className="grid col-4">
         <div className="grid col-4">
           {comment?.map((comment) => (
@@ -140,6 +96,50 @@ const TopicDetails = ({
           ))}
         </div>
       </div>
+      <form className="form" onSubmit={handleSubmit}>
+        <label className="label dateField" htmlFor="name">
+          Your name:{' '}
+        </label>
+        <input
+          className="input"
+          type="text"
+          id="name"
+          placeholder="Name (required)"
+          cols="30"
+          onChange={handleChange}
+          value={formState.name}
+          required
+        />
+        <label className="label dateField" htmlFor="date">
+          Date{' '}
+        </label>
+        <input
+          className="input"
+          type="text"
+          id="date"
+          placeholder="MM/DD/YY (required)"
+          cols="30"
+          onChange={handleChange}
+          value={formState.date}
+          required
+        />
+        <label className="label dateField" htmlFor="comment">
+          Comment:{' '}
+        </label>
+        <textarea
+          className="input"
+          type="text"
+          id="comment"
+          placeholder="comment"
+          cols="50"
+          onChange={handleChange}
+          value={formState.comment}
+          required
+        />
+        <button className="create-tracker-button" type="submit">
+          Add Comment
+        </button>
+      </form>
     </div>
   ) : (
     <div className="protected">
