@@ -10,10 +10,13 @@ const CommentCard = (props) => {
       }
 
     return (
-        <div>
-            <h1> {props.date}</h1>
-            <h1> {props.comment}</h1>
-            <h1> {props.name}</h1>
+        <div className="comment-card">
+            <h1 className="comment"> {props.comment}</h1>
+            <h2 className="user-name"> User's name: {props.name}</h2>
+            <div className="smallDetails">
+            <h3><em>User Id: {props.userId}</em></h3>
+            <h3><em>Comment Date: {props.date}</em></h3>
+            </div>
             <button onClick={(deleteComment)}>Delete Comment</button>
         </div>
     )

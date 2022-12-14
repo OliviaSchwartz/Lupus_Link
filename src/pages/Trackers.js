@@ -84,6 +84,10 @@ const Trackers = ({
             value={formState.overallFeeling}
             id="overallFeeling"
           >
+            <option value="" disabled>
+              {' '}
+              - Select How You're Feeling -{' '}
+            </option>
             <option value="1">1 (Poorly)</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -98,6 +102,10 @@ const Trackers = ({
             value={formState.hoursOfSleep}
             id="hoursOfSleep"
           >
+            <option value="" disabled>
+              {' '}
+              - Select Hours Of Sleep -{' '}
+            </option>
             <option value="1">1 hour</option>
             <option value="2">2 hours</option>
             <option value="3">3 hours</option>
@@ -117,6 +125,10 @@ const Trackers = ({
             value={formState.painLevel}
             id="painLevel"
           >
+            <option value="" disabled>
+              {' '}
+              - Select Pain Level -{' '}
+            </option>
             <option value="1">1 (No pain)</option>
             <option value="2">2 </option>
             <option value="3">3 </option>
@@ -127,6 +139,10 @@ const Trackers = ({
             Are you having any flare symptoms?{' '}
           </label>
           <select onChange={handleChange} value={formState.flare} id="flare">
+            <option value="" disabled>
+              {' '}
+              - Select Yes or No -{' '}
+            </option>
             <option value="yes">Yes</option>
             <option value="no">No </option>
           </select>

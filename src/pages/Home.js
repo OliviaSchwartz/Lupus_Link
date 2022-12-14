@@ -15,6 +15,10 @@ const Home = ({}) => {
             Click here to Register
           </button>
         </section>
+        <h2>
+          "Manage Lupus, Live Better: Get Support and Track Your Symptoms with
+          Lupus Link!"
+        </h2>
       </div>
     </div>
   )

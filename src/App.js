@@ -1,7 +1,6 @@
 import './App.css'
 import { Route, Routes, useNavigate } from 'react-router'
 import { useState, useEffect } from 'react'
-import { Navigate } from 'react-router'
 import NavBar from './components/NavBar'
 import Home from './pages/Home'
 import { CheckSession } from './services/AuthServices'
@@ -11,6 +10,7 @@ import Trackers from './pages/Trackers'
 import SymptomTrackerCard from './components/SymptomTrackerCard'
 import CommunityBoard from './pages/CommunityBoard'
 import TopicDetails from './pages/TopicDetails'
+import Education from './pages/Education'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -119,6 +119,7 @@ function App() {
               />
             }
           />
+          <Route path="/education" element={<Education />} />
         </Routes>
       </main>
     </div>
