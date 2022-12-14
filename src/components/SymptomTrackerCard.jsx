@@ -38,6 +38,7 @@ const initialState = {
           formState,
           trackerId
         )
+        console.log(response)
         props.setLatestTracker(response)
         setFormState(initialState)
         props.setTrackerExists(true)
@@ -71,7 +72,7 @@ const initialState = {
             cols="30"
             onChange={handleChange}
             value={formState.date}
-            required
+            // required
           />
           <label className="label dateField" htmlFor="overallFeeling">
             How are you feeling overall?{' '}
@@ -84,7 +85,7 @@ const initialState = {
             cols="30"
             onChange={handleChange}
             value={formState.overallFeeling}
-            required
+            // required
           />
           <label className="label dateField" htmlFor="hoursOfSleep">
             How Many Hours of sleep did you get last night?{' '}
@@ -97,7 +98,7 @@ const initialState = {
             cols="30"
             onChange={handleChange}
             value={formState.hoursOfSleep}
-            required
+            // required
           />
           <label className="label dateField" htmlFor="painLevel">
             How is your pain level today?{' '}
@@ -110,7 +111,7 @@ const initialState = {
             cols="30"
             onChange={handleChange}
             value={formState.painLevel}
-            required
+            // required
           />
           <label className="label dateField" htmlFor="flare">
             Are you having a flare?{' '}
@@ -123,7 +124,7 @@ const initialState = {
             cols="30"
             onChange={handleChange}
             value={formState.flare}
-            required
+            // required
           />
           <label className="label dateField" htmlFor="notes">
             Use this space to write down any notes you may have{' '}
@@ -136,13 +137,13 @@ const initialState = {
             cols="30"
             onChange={handleChange}
             value={formState.notes}
-            required
+            // required
           />
           <button className="create-tracker-button" type="submit">
             Update
           </button>
-          </form> ) : ( <button className="schedule-button" onClick={()=>setShowForm(true) }> Update Tracker</button>
-)}
+          <button className="create-tracker-button" type="submit" onClick={()=>setShowForm(false)}>Cancel</button>
+          </form> ) : ( <button className="schedule-button" onClick={()=>setShowForm(true) }> Update Tracker</button>)}
         </div>
     )
 }
