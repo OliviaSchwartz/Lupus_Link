@@ -19,6 +19,8 @@ function App() {
   const [trackerExists, setTrackerExists] = useState(false)
   const [topic, setTopic] = useState([])
   const [topicExists, setTopicExists] = useState(false)
+  const [comment, setComment] = useState([])
+  const [commentExists, setCommentExists] = useState(false)
 
   const handleLogOut = () => {
     setUser(null)
@@ -101,7 +103,7 @@ function App() {
             }
           />
           <Route
-            path="/topics/:id"
+            path="topics/:id"
             element={
               <TopicDetails
                 user={user}
@@ -110,6 +112,10 @@ function App() {
                 setTopic={setTopic}
                 topicExists={topicExists}
                 setTopicExists={setTopicExists}
+                setComment={setComment}
+                comment={comment}
+                setCommentExists={setCommentExists}
+                commentExists={commentExists}
               />
             }
           />

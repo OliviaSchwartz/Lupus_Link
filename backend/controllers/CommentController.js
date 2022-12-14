@@ -3,7 +3,9 @@ const { Comments } = require('../models')
 const getComments = async (req, res) => {
   try {
     let topicId = parseInt(req.params.topicId)
-    const comment = await Comments.findAll({ where: { topicId: topicId } })
+    const comment = await Comments.findAll({
+      where: { topicId: topicId }
+    })
     res.send(comment)
   } catch (error) {
     throw error
@@ -13,10 +15,10 @@ const getComments = async (req, res) => {
 const addComment = async (req, res) => {
   try {
     let topicId = parseInt(req.params.topicId)
-    let userId = parseInt(req.params.userId)
+    // let userId = parseInt(req.params.userId)
     let commentContent = {
       topicId,
-      userId,
+      // userId,
       ...req.body
     }
     let comment = await Comments.create(commentContent)

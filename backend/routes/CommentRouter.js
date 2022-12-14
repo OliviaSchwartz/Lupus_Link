@@ -3,12 +3,7 @@ const controller = require('../controllers/CommentController')
 const middleware = require('../middleware')
 
 router.get('/:topicId', controller.getComments)
-router.post(
-  '/:topicId/:userId',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.addComment
-)
+router.post('/:topicId', controller.addComment)
 router.delete(
   '/:topicId/:commentId',
   middleware.stripToken,

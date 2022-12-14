@@ -5,7 +5,7 @@ let navigate=useNavigate()
 
 const viewTopic = () => {
 console.log(props.topicId)
-navigate(`${props.topicId}`)
+navigate(`/topics/${props.topicId}`)
   }
     return (
         <div>

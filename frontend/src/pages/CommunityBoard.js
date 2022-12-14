@@ -53,11 +53,6 @@ const CommunityBoard = ({
     handleTopic()
   }, [latestTopic, toggle])
 
-  // const viewTrackers = (id) => {
-  //   console.log(id)
-  //   navigate(`${id}`)
-  // }
-
   return user && authenticated ? (
     <div>
       <div className="tracker-form">

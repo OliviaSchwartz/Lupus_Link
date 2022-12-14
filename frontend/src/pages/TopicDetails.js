@@ -1,21 +1,58 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { BASE_URL } from '../services/api'
-import { Navigate, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { DeleteTopic } from '../services/CommunityBoardServices'
+import CommentCard from '../components/CommentCard'
+import { CreateComment } from '../services/CommentServices'
 
-const TopicDetails = ({ user, authenticated }) => {
+const TopicDetails = ({
+  user,
+  authenticated,
+  comment,
+  setCommentExists,
+  setComment,
+  commentExists
+}) => {
   let { id } = useParams()
   const [topic, setTopic] = useState({})
   let navigate = useNavigate()
+  const initialState = {
+    date: '',
+    comment: ''
+  }
+
+  const [formState, setFormState] = useState(initialState)
+  const [toggle, setToggle] = useState(false)
+  const [latestComment, setLatestComment] = useState({})
+
+  const handleChange = (e) => {
+    setFormState({ ...formState, [e.target.id]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    let topicId = topic.id
+    console.log(topicId)
+    const response = await CreateComment({ ...formState, topicId })
+    // const response = await axios.post(
+    //   `${BASE_URL}/topics/${id}`,
+    //   formState,
+    //   topicId
+    // )
+    console.log(response)
+    setLatestComment(response)
+    setFormState(initialState)
+    setCommentExists(true)
+  }
 
   useEffect(() => {
-    const topicId = async () => {
+    const getTopic = async () => {
       let response = await axios.get(`${BASE_URL}/topics/${id}`)
       console.log(response.data)
       setTopic(response.data)
     }
-    topicId()
+    getTopic()
   }, [])
 
   const deleteTopic = async (e) => {
@@ -33,6 +70,55 @@ const TopicDetails = ({ user, authenticated }) => {
       <section>
         <button onClick={deleteTopic}>Delete Topic</button>
       </section>
+      <form className="form" onSubmit={handleSubmit}>
+        <label className="label dateField" htmlFor="date">
+          Date{' '}
+        </label>
+        <input
+          className="input"
+          type="text"
+          id="date"
+          placeholder="MM/DD/YY (Required)"
+          cols="30"
+          onChange={handleChange}
+          value={formState.date}
+          required
+        />
+        <label className="label dateField" htmlFor="comment">
+          Comment:{' '}
+        </label>
+        <textarea
+          className="input"
+          type="text"
+          id="comment"
+          placeholder="comment"
+          cols="30"
+          onChange={handleChange}
+          value={formState.comment}
+          required
+        />
+        <button className="create-tracker-button" type="submit">
+          Add Comment
+        </button>
+      </form>
+      <div className="grid col-4">
+        <div className="grid col-4">
+          {comment?.map((comment) => (
+            <CommentCard
+              key={comment.id}
+              date={comment.date}
+              comment={comment.comment}
+              commentId={comment.id}
+              name={comment.User.name}
+              userId={comment.userId}
+              setToggle={setToggle}
+              toggle={toggle}
+              setLatestComment={setLatestComment}
+              latestComment={latestComment}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   ) : (
     <div className="protected">
