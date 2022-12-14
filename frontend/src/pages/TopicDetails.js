@@ -4,7 +4,7 @@ import { BASE_URL } from '../services/api'
 import { Navigate, useNavigate, useParams } from 'react-router-dom'
 import { DeleteTopic } from '../services/CommunityBoardServices'
 
-const TopicDetails = (props) => {
+const TopicDetails = ({ user, authenticated }) => {
   let { id } = useParams()
   const [topic, setTopic] = useState({})
   let navigate = useNavigate()
@@ -25,7 +25,7 @@ const TopicDetails = (props) => {
     navigate(`/topics`)
   }
 
-  return (
+  return user && authenticated ? (
     <div>
       <h1>
         This is the details {topic.date} {topic.topic}
@@ -33,6 +33,16 @@ const TopicDetails = (props) => {
       <section>
         <button onClick={deleteTopic}>Delete Topic</button>
       </section>
+    </div>
+  ) : (
+    <div className="protected">
+      <h3>Oops! You must be signed in to do that!</h3>
+      <button
+        className="delete-schedule-button"
+        onClick={() => navigate('/login')}
+      >
+        Sign In
+      </button>
     </div>
   )
 }
