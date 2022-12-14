@@ -158,6 +158,7 @@ const Trackers = ({
               flare={tracker.flare}
               notes={tracker.notes}
               trackerId={tracker.id}
+              userId={tracker.userId}
               setToggle={setToggle}
               toggle={toggle}
               setLatestTracker={setLatestTracker}

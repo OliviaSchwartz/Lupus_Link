@@ -5,7 +5,7 @@ const Nav = ({ authenticated, user, handleLogOut}) => {
   if (user) {
      authenticatedOptions = (
       <nav className= "navbar">
-        <div className="nav">Hello{user.email}</div>
+        <div className="nav">Welcome {user.email}!</div>
         <Link className="nav" to ='/about'>About</Link>
         <Link className="nav" to='/tracker'>Symptom Tracker</Link>
         <Link className="nav" to='/topics'>Community Board</Link>
