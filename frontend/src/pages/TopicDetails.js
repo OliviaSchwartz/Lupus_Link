@@ -43,7 +43,7 @@ const TopicDetails = ({
     let topicId = topic.id
     console.log(topicId)
     const response = await axios.post(
-      `${BASE_URL}/comments/${id}`,
+      `${BASE_URL}/comments/${id}/${id}`,
       formState,
       topicId
     )
@@ -117,6 +117,7 @@ const TopicDetails = ({
               comment={comment.comment}
               commentId={comment.id}
               userId={comment.userId}
+              //   user={comment.User.name}
               setToggle={setToggle}
               toggle={toggle}
               setLatestComment={setLatestComment}
