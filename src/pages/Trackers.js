@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import {
-  GetOneTracker,
-  GetTrackersById,
-  CreateTrackers
-} from '../services/TrackerServices'
+import { GetTrackersById } from '../services/TrackerServices'
 import SymptomTrackerCard from '../components/SymptomTrackerCard'
-import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../services/api'
 
@@ -15,8 +10,7 @@ const Trackers = ({
   authenticated,
   setTracker,
   tracker,
-  setTrackerExists,
-  userId
+  setTrackerExists
 }) => {
   const initialState = {
     date: '',
@@ -143,8 +137,8 @@ const Trackers = ({
               {' '}
               - Select Yes or No -{' '}
             </option>
-            <option value="yes">Yes</option>
-            <option value="no">No </option>
+            <option value="Yes">Yes</option>
+            <option value="No">No </option>
           </select>
           <label className="label dateField" htmlFor="notes">
             Use this space to write down any notes you may have. If you're
@@ -182,6 +176,7 @@ const Trackers = ({
               toggle={toggle}
               setLatestTracker={setLatestTracker}
               latestTracker={latestTracker}
+              setTrackerExists={setTrackerExists}
             />
           ))}
         </div>

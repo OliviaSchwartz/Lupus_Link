@@ -44,6 +44,7 @@ const initialState = {
         setFormState(initialState)
         props.setTrackerExists(true)
         props.setToggle(!props.toggle)
+        setShowForm(false)
       }
 
     const displayUpdateForm = async () => {
@@ -87,11 +88,11 @@ const initialState = {
               {' '}
               - Select How You're Feeling -{' '}
             </option>
-            <option value="1">1</option>
+            <option value="1">1 (Poorly)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5</option>
+            <option value="5">5 (Great)</option>
           </select>
           <label className="label dateField" htmlFor="hoursOfSleep">
             How Many Hours of sleep did you get last night?{' '}
