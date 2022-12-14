@@ -79,59 +79,62 @@ const Trackers = ({
           <label className="label dateField" htmlFor="overallFeeling">
             How are you feeling overall?{' '}
           </label>
-          <input
-            className="input"
-            type="text"
-            id="overallFeeling"
-            placeholder="1-5(Required)"
-            cols="30"
+          <select
             onChange={handleChange}
             value={formState.overallFeeling}
-            required
-          />
+            id="overallFeeling"
+          >
+            <option value="1">1 (Poorly)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Great!)</option>
+          </select>
           <label className="label dateField" htmlFor="hoursOfSleep">
             How Many Hours of sleep did you get last night?{' '}
           </label>
-          <input
-            className="input"
-            type="text"
-            id="hoursOfSleep"
-            placeholder="1-10 (Required)"
-            cols="30"
+          <select
             onChange={handleChange}
             value={formState.hoursOfSleep}
-            required
-          />
+            id="hoursOfSleep"
+          >
+            <option value="1">1 hour</option>
+            <option value="2">2 hours</option>
+            <option value="3">3 hours</option>
+            <option value="4">4 hours</option>
+            <option value="5">5 hours</option>
+            <option value="6">6 hours</option>
+            <option value="7">7 hours</option>
+            <option value="8">8 hours</option>
+            <option value="9">9 hours</option>
+            <option value="10">10+ hours</option>
+          </select>
           <label className="label dateField" htmlFor="painLevel">
-            How is your pain level today?{' '}
+            How is your pain today?{' '}
           </label>
-          <input
-            className="input"
-            type="text"
-            id="painLevel"
-            placeholder="1-4 (Required)"
-            cols="30"
+          <select
             onChange={handleChange}
             value={formState.painLevel}
-            required
-          />
-          <label className="label dateField" htmlFor="flare">
-            Are you having a flare?{' '}
+            id="painLevel"
+          >
+            <option value="1">1 (No pain)</option>
+            <option value="2">2 </option>
+            <option value="3">3 </option>
+            <option value="4">4 </option>
+            <option value="5">5 (Severe pain)</option>
+          </select>
+          <label className="label datefield" htmlFor="flare">
+            Are you having any flare symptoms?{' '}
           </label>
-          <input
-            className="input"
-            type="text"
-            id="flare"
-            placeholder="True or false?"
-            cols="30"
-            onChange={handleChange}
-            value={formState.flare}
-            required
-          />
+          <select onChange={handleChange} value={formState.flare} id="flare">
+            <option value="yes">Yes</option>
+            <option value="no">No </option>
+          </select>
           <label className="label dateField" htmlFor="notes">
-            Use this space to write down any notes you may have{' '}
+            Use this space to write down any notes you may have. If you're
+            feeling any flare symptoms make sure to document them here.{' '}
           </label>
-          <input
+          <textarea
             className="input"
             type="text"
             id="notes"
