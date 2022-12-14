@@ -18,8 +18,7 @@ const CommunityBoard = ({
 }) => {
   const initialState = {
     date: '',
-    topic: '',
-    name: ''
+    topic: ''
   }
 
   let navigate = useNavigate()
@@ -79,7 +78,7 @@ const CommunityBoard = ({
           <label className="label dateField" htmlFor="topic">
             Topic:{' '}
           </label>
-          <input
+          <textarea
             className="input"
             type="text-area"
             id="topic"
@@ -87,19 +86,6 @@ const CommunityBoard = ({
             cols="30"
             onChange={handleChange}
             value={formState.topic}
-            required
-          />
-          <label className="label dateField" htmlFor="name">
-            Your name:{' '}
-          </label>
-          <input
-            className="input"
-            type="text-area"
-            id="name"
-            placeholder="1-5(Required)"
-            cols="30"
-            onChange={handleChange}
-            value={formState.name}
             required
           />
           <button className="create-tracker-button" type="submit">

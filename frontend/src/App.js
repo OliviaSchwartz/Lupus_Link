@@ -10,6 +10,7 @@ import Register from './pages/Register'
 import Trackers from './pages/Trackers'
 import SymptomTrackerCard from './components/SymptomTrackerCard'
 import CommunityBoard from './pages/CommunityBoard'
+import TopicDetails from './pages/TopicDetails'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -90,6 +91,19 @@ function App() {
             path="/topics"
             element={
               <CommunityBoard
+                user={user}
+                authenticated={authenticated}
+                topic={topic}
+                setTopic={setTopic}
+                topicExists={topicExists}
+                setTopicExists={setTopicExists}
+              />
+            }
+          />
+          <Route
+            path="/topics/:id"
+            element={
+              <TopicDetails
                 user={user}
                 authenticated={authenticated}
                 topic={topic}
