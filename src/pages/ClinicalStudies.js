@@ -24,7 +24,7 @@ const ClinicalStudies = () => {
           </h4>
           <h4 className="study-eligibility">
             {' '}
-            Lupus Diagnosis. Must be over 18.
+            <em>Study Eligibility: </em> Lupus Diagnosis. Must be over 18.
           </h4>
         </div>
 
@@ -41,7 +41,7 @@ const ClinicalStudies = () => {
             with active lupus nephritis.
           </h4>
           <h4 className="study-eligibility">
-            Lupus Diagnosis. Must be over 18.
+            <em>Study Eligibility: </em> Lupus Diagnosis. Must be over 18.
           </h4>
         </div>
 
@@ -63,7 +63,8 @@ const ClinicalStudies = () => {
             MetroHealth Medical Center.
           </h4>
           <h4 className="study-eligibility">
-            Lupus Diagnosis. Must be between the ages of 18-45.
+            <em>Study Eligibility: </em> Lupus Diagnosis. Must be between the
+            ages of 18-45.
           </h4>
         </div>
       </div>

@@ -167,7 +167,7 @@ form button:disabled {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.tracker-card, .topic-card{
+.tracker-card, .topic-card, .clinical-study{
   color:white;
   margin: 25px;
   padding: 10px;
@@ -271,6 +271,11 @@ select {
 
 .form-label {
   margin: 30px;
+}
+
+a {
+  color: white;
+  font-size: xx-large;
 }
 
 @media screen and (max-width: 1220px) {
