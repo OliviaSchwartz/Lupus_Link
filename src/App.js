@@ -11,6 +11,7 @@ import SymptomTrackerCard from './components/SymptomTrackerCard'
 import CommunityBoard from './pages/CommunityBoard'
 import TopicDetails from './pages/TopicDetails'
 import Education from './pages/Education'
+import ClinicalStudies from './pages/ClinicalStudies'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -120,6 +121,7 @@ function App() {
             }
           />
           <Route path="/education" element={<Education />} />
+          <Route path="/clinicaltrials" element={<ClinicalStudies />} />
         </Routes>
       </main>
     </div>

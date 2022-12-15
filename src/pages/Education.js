@@ -16,6 +16,7 @@ const Education = () => {
           <img
             className="education-pictures"
             src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="lupus-guide"
           />
           <h4 className="Description">
             Lupus information and links in an easy-to-read format
@@ -31,6 +32,7 @@ const Education = () => {
           <img
             className="education-pictures"
             src="https://images.pexels.com/photos/891059/pexels-photo-891059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="lupus-foundation"
           />
           <h4 className="Description">
             Learn more about lupus with some quick statistics and facts
@@ -46,6 +48,7 @@ const Education = () => {
           <img
             className="education-pictures"
             src="https://images.pexels.com/photos/4021779/pexels-photo-4021779.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="rheumatology"
           />
           <h4 className="Description">
             {' '}
@@ -66,6 +69,7 @@ const Education = () => {
           <img
             className="education-pictures"
             src="https://images.pexels.com/photos/1660030/pexels-photo-1660030.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="diet"
           />
           <h4 className="Description">
             While there is no set diet for lupus, focusing on healthy eating
@@ -82,6 +86,7 @@ const Education = () => {
           <img
             className="education-pictures"
             src="https://images.pexels.com/photos/576831/pexels-photo-576831.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="medicine"
           />
           <h4 className="Description">
             Because lupus can cause a lot of different health problems, there
@@ -94,12 +99,14 @@ const Education = () => {
           <a
             className="Title"
             href="https://www.mayoclinic.org/diseases-conditions/lupus/diagnosis-treatment/drc-20365790"
+            alt="treatment"
           >
             Mayo Clinic's Guide to Treating Lupus
           </a>
           <img
             className="education-pictures"
             src="https://images.pexels.com/photos/5407212/pexels-photo-5407212.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="treating"
           />
           <h4 className="Description">
             A thorough guide on the treatment of Lupus
@@ -116,6 +123,7 @@ const Education = () => {
           <img
             className="education-pictures"
             src="https://images.pexels.com/photos/3683042/pexels-photo-3683042.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="needy"
           />
           <h4 className="Description">Find help with the cost of medicine </h4>
         </div>
@@ -126,6 +134,7 @@ const Education = () => {
           <img
             className="education-picture"
             src="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="assistance"
           />
           <h4 className="Description">
             Provides financial support for co-payments, deductibles, and
@@ -143,6 +152,7 @@ const Education = () => {
           <img
             className="education-pictures"
             src="https://images.pexels.com/photos/7089401/pexels-photo-7089401.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="patient"
           />
 
           <h4 className="Description">
