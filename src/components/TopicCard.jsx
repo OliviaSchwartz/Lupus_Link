@@ -7,12 +7,20 @@ const viewTopic = () => {
 navigate(`/topics/${props.topicId}`)
   }
     return (
-        <div>
+        <div className="topic-card">
+        <div className="topic-date">
         <div>Posted Date: {props.date}</div>
-        <div>Topic:{props.topic} </div>
+         </div>
+        <div>{props.topic} </div>
+        <section className="topic-details">
+        <div className="user-details">
         <div>Posted by: {props.name}</div>
-        <div>User Id: {props.userId}</div>
-        <button onClick={(viewTopic)}>View Comments</button>
+        <div className="userid"><em>User Id: {props.userId}</em></div>
+        </div>
+        <div className="button-container">
+        <button className="create-tracker-button"  onClick={(viewTopic)}>View Comments</button>
+        </div>
+        </section>
         </div>
     )
 }

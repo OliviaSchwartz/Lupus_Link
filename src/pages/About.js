@@ -2,7 +2,7 @@ const About = () => {
   return (
     <div className="about-page">
       <h1 className="page-name">About Lupus Link</h1>
-      <h2>
+      <h2 className="about-info">
         Lupus Link is an innovative mobile application designed to provide
         support and resources to people living with lupus. Lupus is an
         autoimmune disorder that affects millions of people around the world.
