@@ -50,6 +50,7 @@ const CommunityBoard = ({
 
   return user && authenticated ? (
     <div>
+      <h1 className="page-name">Community Discussion Board</h1>
       <div className="tracker-form">
         <form className="form" onSubmit={handleSubmit}>
           <label className="label dateField" htmlFor="date">

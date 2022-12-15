@@ -1,14 +1,20 @@
 const About = () => {
   return (
-    <div>
+    <div className="about-page">
+      <h1 className="page-name">About Lupus Link</h1>
       <h2>
-        It's important for people with lupus to have a support system.
-        Connecting with others who have lupus can provide valuable insight on
-        how to cope with the disorder. Support groups and online resources can
-        also provide education, advice, and emotional support. Living with lupus
-        can be challenging, but a positive attitude and self-care can help to
-        manage symptoms. It's important to keep up with treatments and have
-        regular check
+        Lupus Link is an innovative mobile application designed to provide
+        support and resources to people living with lupus. Lupus is an
+        autoimmune disorder that affects millions of people around the world.
+        This app serves as a platform for people to connect with one another and
+        access the resources they need to manage their disease. Lupus App
+        provides users with educational content, access to support groups, and
+        resources for managing the condition. With this app, users can stay
+        informed and connected to others who understand what it is like to live
+        with lupus. We aim to create a community where people can share their
+        stories and experiences, ask questions, and access important
+        information. Our mission is to empower people with lupus to take control
+        of their health and live a full and fulfilling life.
       </h2>
     </div>
   )

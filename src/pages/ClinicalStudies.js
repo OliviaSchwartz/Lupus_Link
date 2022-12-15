@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 const ClinicalStudies = () => {
   return (
     <div>
-      <h1>Clinical Trials Actively Recruiting</h1>
+      <h1 className="page-name">Clinical Trials Actively Recruiting</h1>
       <div className="clinical-studies-cards">
         <div className="clinical-study">
           <a

@@ -70,6 +70,7 @@ const Trackers = ({
             value={formState.date}
             required
           />
+          <br>
           <label className="label dateField" htmlFor="overallFeeling">
             How are you feeling overall?{' '}
           </label>
@@ -160,7 +161,7 @@ const Trackers = ({
         </form>
       </div>
       <div className="grid col-4">
-        <div className="grid col-4">
+        <div className="tracker-container">
           {tracker?.map((tracker) => (
             <SymptomTrackerCard
               key={tracker.id}
