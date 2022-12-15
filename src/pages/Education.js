@@ -3,8 +3,8 @@ const Education = () => {
     <div className="education">
       <h1 className="page-name">Educational Resources</h1>
       <div className="education-container">
+        <h2 className="section-heading">Understanding Lupus</h2>
         <div className="education-section">
-          <h2 className="section-heading">Understanding Lupus</h2>
           <div className="link-box">
             <a
               className="Title"
@@ -57,8 +57,8 @@ const Education = () => {
         </div>
       </div>
 
+      <h2 className="section-heading">Treating Lupus</h2>
       <div className="education-section">
-        <h2 className="section-heading">Treating Lupus</h2>
         <div className="link-box">
           <a
             className="Title"
@@ -114,8 +114,8 @@ const Education = () => {
         </div>
       </div>
 
+      <h2 className="section-heading">Financial Resources</h2>
       <div className="education-section">
-        <h2 className="section-heading">Financial Resources</h2>
         <div className="link-box">
           <a className="Title" href="https://www.needymeds.org/">
             Needy Meds

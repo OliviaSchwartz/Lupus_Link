@@ -163,7 +163,7 @@ form button:disabled {
   font-size: 100px;
   color: white;
   line-height: 120px;
-  text-shadow: 3px 3px #7858A6;
+  text-shadow: 8px 8px #7858A6;
   font-family: 'Bitter';
 }
 
@@ -287,25 +287,36 @@ select {
 
 a {
   color: white;
-  font-size: xx-large;
-}
-
-.education-container {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  text-shadow: 2px 2px #7858A6;
+  font-size: x-large;
+  margin: 10px;
 }
 
 .education-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.link-box {
-  box-shadow: 2px 0px 15px #7858A6
+.link-box{
+  box-shadow: 2px 0px 15px #7858A6;
+  margin: 25px;
+  height: 500px;
+  width: 300px;
+  text-align: center;
+  padding: 40px
 
+}
+
+.link-box:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+  background-color: white;
+  color: #7858A6;
 }
 .education-pictures{
+  margin: 10px;
   height: 200px;
+  border: 2px white
 }
 
 .home-container,
@@ -341,6 +352,12 @@ text-align: center;
 .logo{
   text-align:center;
   color:white;
+}
+
+.section-heading{
+  margin: 25px;
+  font-size: 40px;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1220px) {
