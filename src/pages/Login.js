@@ -22,7 +22,7 @@ const LogIn = ({ setUser, toggleAuthenticated, user }) => {
 
   return (
     <div className="signin col">
-      <h1 className="lupuslink">Lupus Link</h1>
+      <h1 className="welcome-message">Lupus Link</h1>
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
@@ -46,7 +46,10 @@ const LogIn = ({ setUser, toggleAuthenticated, user }) => {
               required
             />
           </div>
-          <button disabled={!formValues.email || !formValues.password}>
+          <button
+            className="login-button"
+            disabled={!formValues.email || !formValues.password}
+          >
             Sign In
           </button>
         </form>

@@ -5,6 +5,9 @@ const Home = () => {
   return (
     <div className="home-container col">
       <div>
+        <h2 className="logo">
+          Manage Lupus, Live Better: Get Support and Track Your Symptoms with
+        </h2>
         <h1 className="welcome-message">Lupus Link</h1>
         <section className="welcome-signin">
           <button onClick={() => navigate('/login')}>
@@ -15,10 +18,6 @@ const Home = () => {
             Click here to Register
           </button>
         </section>
-        <h2>
-          "Manage Lupus, Live Better: Get Support and Track Your Symptoms with
-          Lupus Link!"
-        </h2>
       </div>
     </div>
   )

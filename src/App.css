@@ -81,14 +81,15 @@ html, body {
   padding: 0.8em 1.2em;
   margin:20px;
   margin-top: 30px;
-  background-color: var(--primary-bg);
-  color: var(--link-color-secondary);
+  background-color: #4C3575 ;
+  color: white;
   font-size: 1.1rem;
 }
 
 .home-container button:hover {
   transform: scale(1.1);
-  background-color: var(--primary-button-hover);
+  background-color: white;
+  color: #7858A6;
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -156,7 +157,7 @@ form button:disabled {
 
 .welcome-message {
   width: 1000px;
-  margin: 50px;
+  margin: 10px;
   padding: 20px;
   margin-bottom: 0;
   font-size: 100px;
@@ -216,7 +217,7 @@ select {
   color: white;
 }
 
-.register-button {
+.register-button, .login-button {
   margin: 60px;
   background-color: white;
   color: #7858A6
@@ -335,6 +336,11 @@ a {
 .protected{
 font-size: 45px;
 text-align: center;
+}
+
+.logo{
+  text-align:center;
+  color:white;
 }
 
 @media screen and (max-width: 1220px) {
