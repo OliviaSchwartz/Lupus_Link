@@ -16,7 +16,7 @@ html, body {
   width: 100%;
   position: fixed;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   top: 0;
   right: 0px;
@@ -28,12 +28,13 @@ html, body {
 
 .nav {
   margin-right: 25px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
   color:white;
   text-decoration: none;
   font-family: 'Bitter', sans-serif;
 }
+
 
 
 .nav:hover{
@@ -52,7 +53,10 @@ html, body {
   color: white;
 }
 
-
+.nav.welcomenav {
+  text-decoration: none;
+ justify-content: left;
+}
 
 
 
@@ -152,10 +156,10 @@ form button:disabled {
 
 .welcome-message {
   width: 1000px;
-  margin: 100px;
+  margin: 50px;
   padding: 20px;
   margin-bottom: 0;
-  font-size: 110px;
+  font-size: 100px;
   color: white;
   line-height: 120px;
   text-shadow: 3px 3px #7858A6;
@@ -182,6 +186,7 @@ form button:disabled {
 
 .page-name {
   text-align: center;
+  margin: 50px 0 0 0;
   color:white;
   font-size: 40px;
   padding:10px;
@@ -211,6 +216,12 @@ select {
   color: white;
 }
 
+.register-button {
+  margin: 60px;
+  background-color: white;
+  color: #7858A6
+}
+
 .tracker-button:hover, .create-tracker-button:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -227,7 +238,7 @@ select {
 
 .about-info{
   color: white;
-  margin: 0 50px 0 50px;
+  margin: 25px 50px 0 50px;
   text-align: center;
 }
 
@@ -276,6 +287,49 @@ select {
 a {
   color: white;
   font-size: xx-large;
+}
+
+.education-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.education-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.link-box {
+  box-shadow: 2px 0px 15px #7858A6
+
+}
+.education-pictures{
+  height: 200px;
+}
+
+.home-container,
+.signin {
+  min-height: calc(100vh - 4em);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color:#091e00;
+}
+
+.card-overlay {
+  border: 2px solid white;
+  color:white;
+  font-family: "Bitter";
+  width: 60%;
+  padding: 1em;
+  box-shadow: 2px 0px 30px rgba(0, 0, 0, 0.3);
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1220px) {

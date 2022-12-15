@@ -1,59 +1,59 @@
 const Education = () => {
   return (
-    <div className="education-container">
-      <h1 className="education-header">Educational Resources</h1>
-
-      <div className="education-section">
-        <h2 className="section-heading">Understanding Lupus</h2>
-        <div className="link=-container"></div>
-        <div className="link-box">
-          <a
-            className="Title"
-            href="https://www.verywellhealth.com/lupus-4014693"
-          >
-            Very Well's Guide to Lupus
-          </a>
-          <img
-            className="education-pictures"
-            src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            alt="lupus-guide"
-          />
-          <h4 className="Description">
-            Lupus information and links in an easy-to-read format
-          </h4>
-        </div>
-        <div className="link-box">
-          <a
-            className="Title"
-            href="https://www.lupus.org/resources/lupus-facts-and-statistics"
-          >
-            Lupus Foundation's Lupus Facts and Statistics
-          </a>
-          <img
-            className="education-pictures"
-            src="https://images.pexels.com/photos/891059/pexels-photo-891059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            alt="lupus-foundation"
-          />
-          <h4 className="Description">
-            Learn more about lupus with some quick statistics and facts
-          </h4>
-        </div>
-        <div className="link-box">
-          <a
-            className="Title"
-            href="https://www.rheumatology.org/I-Am-A/Patient-Caregiver/Diseases-Conditions/Lupus"
-          >
-            American College of Rheumatology Lupus Information
-          </a>
-          <img
-            className="education-pictures"
-            src="https://images.pexels.com/photos/4021779/pexels-photo-4021779.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="rheumatology"
-          />
-          <h4 className="Description">
-            {' '}
-            Listings of rheumatologists and a lupus fact sheet.
-          </h4>
+    <div className="education">
+      <h1 className="page-name">Educational Resources</h1>
+      <div className="education-container">
+        <div className="education-section">
+          <h2 className="section-heading">Understanding Lupus</h2>
+          <div className="link-box">
+            <a
+              className="Title"
+              href="https://www.verywellhealth.com/lupus-4014693"
+            >
+              Very Well's Guide to Lupus
+            </a>
+            <img
+              className="education-pictures"
+              src="https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt="lupus-guide"
+            />
+            <h4 className="Description">
+              Lupus information and links in an easy-to-read format
+            </h4>
+          </div>
+          <div className="link-box">
+            <a
+              className="Title"
+              href="https://www.lupus.org/resources/lupus-facts-and-statistics"
+            >
+              Lupus Foundation's Lupus Facts and Statistics
+            </a>
+            <img
+              className="education-pictures"
+              src="https://images.pexels.com/photos/891059/pexels-photo-891059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt="lupus-foundation"
+            />
+            <h4 className="Description">
+              Learn more about lupus with some quick statistics and facts
+            </h4>
+          </div>
+          <div className="link-box">
+            <a
+              className="Title"
+              href="https://www.rheumatology.org/I-Am-A/Patient-Caregiver/Diseases-Conditions/Lupus"
+            >
+              American College of Rheumatology Lupus Information
+            </a>
+            <img
+              className="education-pictures"
+              src="https://images.pexels.com/photos/4021779/pexels-photo-4021779.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="rheumatology"
+            />
+            <h4 className="Description">
+              {' '}
+              Listings of rheumatologists and a lupus fact sheet.
+            </h4>
+          </div>
         </div>
       </div>
 
@@ -132,7 +132,7 @@ const Education = () => {
             The Assistance Fund
           </a>
           <img
-            className="education-picture"
+            className="education-pictures"
             src="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
             alt="assistance"
           />
