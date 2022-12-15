@@ -7,6 +7,7 @@ html, body {
   background-color: #371B58;
   /* height: 3000vh; */
   font-family: 'Bitter';
+  color:white
 }
 
 
@@ -187,7 +188,7 @@ form button:disabled {
   text-shadow: 1px 1px #7858A6;
 }
 
-label {
+.label {
   display: block;
   margin: 10px 0 0;
   padding: 5px;
@@ -237,11 +238,39 @@ select {
 .topic-details{
   display:flex;
   justify-content: space-between;
+  align-items: flex-end;
   margin: 10px 0px 10px 0;
 }
 
 .userid{
   font-size: smaller;
+}
+
+.topic-detail-display{
+  padding:5px;
+  margin: 50px 25px 10px 25px;
+  border: 1px white;
+  color:white;
+  box-shadow: 2px 0px 15px #7858A6
+}
+
+.delete-button {
+  margin: 5px;
+  align-self: right;
+}
+
+.comment-card {
+  margin: 25px;
+  align-content: center;
+  box-shadow: 2px 0px 15px #7858A6
+}
+
+.smalldetails{
+  margin:0;
+}
+
+.form-label {
+  margin: 30px;
 }
 
 @media screen and (max-width: 1220px) {

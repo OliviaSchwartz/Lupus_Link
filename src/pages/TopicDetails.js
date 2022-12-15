@@ -68,13 +68,17 @@ const TopicDetails = ({
 
   return user && authenticated ? (
     <div>
-      <h1>
-        This is the details {topic.date} {topic.topic}
-      </h1>
-      <section>
-        <button onClick={deleteTopic}>Delete Topic</button>
-      </section>
+      <div className="topic-detail-display">
+        <h2 className="topic-date">Date Posted: {topic.date}</h2>
+        <h3 className="topic-display">{topic.topic}</h3>
+        <section>
+          <button className="delete-button" onClick={deleteTopic}>
+            Delete Topic
+          </button>
+        </section>
+      </div>
       <div className="grid col-4">
+        <h3 className="topic-display">Comments:</h3>
         <div className="grid col-4">
           {comment?.map((comment) => (
             <CommentCard
@@ -92,8 +96,8 @@ const TopicDetails = ({
           ))}
         </div>
       </div>
-      <form className="form" onSubmit={handleSubmit}>
-        <label className="label dateField" htmlFor="name">
+      <form className="comment-form" onSubmit={handleSubmit}>
+        <label className="form-label dateField" htmlFor="name">
           Your name:{' '}
         </label>
         <input
@@ -106,7 +110,7 @@ const TopicDetails = ({
           value={formState.name}
           required
         />
-        <label className="label dateField" htmlFor="date">
+        <label className="form-label dateField" htmlFor="date">
           Date{' '}
         </label>
         <input
@@ -119,7 +123,7 @@ const TopicDetails = ({
           value={formState.date}
           required
         />
-        <label className="label dateField" htmlFor="comment">
+        <label className="form-label dateField" htmlFor="comment">
           Comment:{' '}
         </label>
         <textarea
