@@ -58,7 +58,7 @@ const Trackers = ({
       <div className="tracker-form">
         <form className="form" onSubmit={handleSubmit}>
           <label className="label dateField" htmlFor="date">
-            Date{' '}
+            Today's Date{' '}
           </label>
           <input
             className="input"
@@ -70,7 +70,6 @@ const Trackers = ({
             value={formState.date}
             required
           />
-          <br>
           <label className="label dateField" htmlFor="overallFeeling">
             How are you feeling overall?{' '}
           </label>
@@ -90,7 +89,7 @@ const Trackers = ({
             <option value="5">5 (Great!)</option>
           </select>
           <label className="label dateField" htmlFor="hoursOfSleep">
-            How Many Hours of sleep did you get last night?{' '}
+            How many hours of sleep did you get last night?{' '}
           </label>
           <select
             onChange={handleChange}

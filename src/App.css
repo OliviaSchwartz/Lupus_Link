@@ -181,3 +181,33 @@ form button:disabled {
   padding:10px;
   text-shadow: 1px 1px #7858A6;
 }
+
+label {
+  display: block;
+  margin: 10px 0 0;
+  padding: 5px;
+  color: white;
+}
+
+.tracker-form {
+  text-align: center;
+}
+
+select {
+  box-shadow: 2px 0px 15px #7858A6;
+  font-family: 'Bitter';
+}
+
+.tracker-button {
+  margin: 30px;
+  width: auto;
+  background-color: #7858A6;
+  color: white;
+}
+
+.tracker-button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  background-color: white;
+  color: #7858A6;
+}
